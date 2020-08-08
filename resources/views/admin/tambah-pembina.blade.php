@@ -16,18 +16,14 @@
 						<thead>
 							<tr>
 								<th>No</th>
-								<th>Tanggal</th>
-								<th>Kelas</th>
 								<th>Pembina</th>
 								<th>Aksi</th>
 							</tr>
 						</thead>
-						@foreach($schedule as $data)
+						@foreach($teacher as $data)
 						<tbody>
 							
 							<th>{{$no ++}}</th>
-							<th>{{date('l, d F Y', strtotime($data->created_schedule))}}</th>
-							<th>{{$data->class_name}}</th>
 							<th>{{$data->teacher_name}}</th>
 							<th>Aksi</th>
 							
@@ -55,22 +51,9 @@
 				<div class="form-group row">
                   <label for="input-6" class="col-sm-2 col-form-label">Pembina</label>
                   <div class="col-sm-10">
-                    <select class="form-control valid" id="input-6" name="pembina" required="" aria-invalid="false">
-                       @foreach($guru as $data)
-                       		<option value="{{$data->id}}">{{$data->teacher_name}}</option>
-                       @endforeach
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="input-6" class="col-sm-2 col-form-label">Petugas</label>
-                  <div class="col-sm-10">
-                    <select class="form-control valid" id="input-6" name="petugas" required="" aria-invalid="false">
-                       @foreach($kelas as $data)
-                       		<option value="{{$data->id}}">{{$data->class_name .  '  ||  ' .  $data->majors}}</option>
-                       @endforeach
-                    </select>
+                    <input type="text" class="form-control valid" id="input-6" name="pembina" required="" aria-invalid="false">
+                       
+         
                   </div>
                 </div>
                 <div class="form-group row">

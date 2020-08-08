@@ -29,7 +29,13 @@ Route::group(['middleware' => ['role:admin']], function () { //kegunaannya adala
 	Route::get('admin/tambah-petugas-upacara', 'AdminController@TambahPetugasUpacara'); //kegunaannya adalah untuk
 	Route::post('admin/tambah-petugas-upacara', 'AdminController@SaveSchedule'); //kegunaannya adalah untuk
 	
-
+	Route::get('admin/tambah-pembina', 'AdminController@TambahPembina'); //kegunaannya adalah untuk
+	Route::post('admin/tambah-pembina', 'AdminController@SaveTeacher'); //kegunaannya adalah untuk
+	
+	Route::get('admin/tambah-kelas', 'AdminController@TambahKelas'); //kegunaannya adalah untuk
+	Route::post('admin/tambah-kelas', 'AdminController@SaveClass'); //kegunaannya adalah untuk
+	
+	
 
 
 });

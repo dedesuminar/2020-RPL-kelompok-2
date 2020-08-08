@@ -44,4 +44,40 @@ class AdminController extends Controller
     $create->id_class =  $request->input('petugas');
     $create->save();
  }
+
+ public function TambahPembina()
+ {
+      $data ['teacher'] = Teacher::all();
+      $data ['kelas'] = kelas::all();
+      $data ['no'] = 1;
+
+
+ return view ('admin.tambah-pembina', $data);
+ }
+
+ public function SaveTeacher(Request $request){
+    $create = new Teacher;
+    $create->id = $request->input('pembina'); 
+    $create->teacher_name = $request->input('pembina');
+    $create->save();
+
+}
+
+public function TambahKelas()
+{
+    $data ['kelas'] = Kelas::all();
+    $data ['kelas'] = kelas::all();
+    $data ['no'] = 1;
+
+return view ('admin.tambah-kelas',$data);
+}
+
+public function SaveClass(Request $request){
+    $create = new Kelas;
+    $create->id = $request->input('kelas');
+    $create->class_name = $request->input('kelas');
+     $create->majors = $request->input('kelas');
+    $create->save();
+}
+
 }

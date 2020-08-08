@@ -18,10 +18,12 @@
     <ul class="sidebar-submenu">
       <li><a href="{{URL::to('admin/daftar-upacara')}}"><i class="fa fa-circle-o"></i> Daftar Upacara</a></li>
       <li><a href="{{URL::to('admin/tambah-petugas-upacara')}}"><i class="fa fa-circle-o"></i> Tambah Data Petugas</a></li>
-      <li><a href="index3.html"><i class="fa fa-circle-o"></i> Dashboard v3</a></li>
-      <li><a href="index4.html"><i class="fa fa-circle-o"></i> Dashboard v4</a></li>
+      <li><a href="{{URL::to('admin/tambah-pembina')}}"><i class="fa fa-circle-o"></i> Tambah Data Pembina</a></li>
+      <li><a href="{{URL::to('admin/tambah-kelas')}}"><i class="fa fa-circle-o"></i> Tambah Data Kelas</a></li>
     </ul>
   </li>
+
+
 
 
 

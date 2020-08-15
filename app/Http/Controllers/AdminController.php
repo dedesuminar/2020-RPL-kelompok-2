@@ -25,8 +25,8 @@ class AdminController extends Controller
     $data ['kelas'] = kelas::all();
     $data ['guru'] = Teacher::all();
     $data ['no'] = 1;
-    $data ['schedule'] = Schedule::join('teachers' , 'teachers.id' , '=' , 'schedules.id_teacher')
-                                ->join('class' , 'class.id' , '=' , 'schedules.id_class')
+    $data ['schedule'] = Schedule::join('teachers' , 'teachers.id_teacher' , '=' , 'schedules.id_teacher')
+                                ->join('class' , 'class.id_class' , '=' , 'schedules.id_class')
                                 ->select(
                                     'schedules.*', 'schedules.created_at as created_schedule',
                                     'class.class_name',

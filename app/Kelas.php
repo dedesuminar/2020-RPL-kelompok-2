@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-	protected $table = 'classes';
+	protected $table = 'class';
     protected $fillable=[
-	'class_name', 'majors'
+	'class_name', 'major'
     ];
 }

@@ -26,10 +26,10 @@ class AdminController extends Controller
     $data ['guru'] = Teacher::all();
     $data ['no'] = 1;
     $data ['schedule'] = Schedule::join('teachers' , 'teachers.id' , '=' , 'schedules.id_teacher')
-                                ->join('classes' , 'classes.id' , '=' , 'schedules.id_class')
+                                ->join('class' , 'class.id' , '=' , 'schedules.id_class')
                                 ->select(
                                     'schedules.*', 'schedules.created_at as created_schedule',
-                                    'classes.class_name',
+                                    'class.class_name',
                                     'teachers.teacher_name'
                                 )
                                 ->orderBy('created_schedule', 'DESC')
@@ -45,6 +45,14 @@ class AdminController extends Controller
     $create->save();
  }
 
+public function edit($id)
+    {
+        $data = Schedule::find($id);
+
+        return view('admin.edit-petugas',compact('data'));
+    }
+
+
  public function TambahPembina()
  {
       $data ['teacher'] = Teacher::all();
@@ -57,11 +65,16 @@ class AdminController extends Controller
 
  public function SaveTeacher(Request $request){
     $create = new Teacher;
-    $create->id = $request->input('pembina'); 
-    $create->teacher_name = $request->input('pembina');
+    $create->teacher_name = $request->input('teacher_name');
     $create->save();
 
 }
+public function editPembina($id)
+    {
+        $data = Teacher::find($id);
+        
+        return view('admin.edit-pembina',compact('data'));
+    }
 
 public function TambahKelas()
 {
@@ -74,9 +87,8 @@ return view ('admin.tambah-kelas',$data);
 
 public function SaveClass(Request $request){
     $create = new Kelas;
-    $create->id = $request->input('kelas');
-    $create->class_name = $request->input('kelas');
-     $create->majors = $request->input('kelas');
+    $create->class_name = $request->input('class_name');
+    $create->majors = $request->input('majors');
     $create->save();
 }
 

@@ -19,6 +19,7 @@
 								<th>Kelas</th>
 								<th>Jurusan</th>
 								<th>Aksi</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						@foreach($kelas as $data)
@@ -26,8 +27,9 @@
 							
 							<th>{{$no ++}}</th>
 							<th>{{$data->class_name}}</th>
-							<th>{{$data->majors}}</th>
-							<th>Aksi</th>
+							<th>{{$data->major}}</th>
+							<th><button type="submit" class="btn btn-danger">EDIT</button></th>
+							<th><button type="submit" class="btn btn-success">DELETE</button></th>
 							
 						</tbody>
 						@endforeach
@@ -57,22 +59,6 @@
                        </div>
          
                   </div>
-
-                  <div class="form-group row">
-                  <label for="input-6" class="col-sm-2 col-form-label" name="majors">Jurusan</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control valid" id="input-6" name="majors" required="" aria-invalid="false">
-                      </div>
-                  </div>
-
-                <div class="form-group row">
-                  <label for="input-8" class="col-sm-2 col-form-label">Tanggal</label>
-                  <div class="col-sm-10">
-                    <input type="date" class="form-control" id="input-8" name="" required="">
-                  </div>
-                </div>
-
-			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
 				<button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Save changes</button>

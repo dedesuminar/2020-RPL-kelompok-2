@@ -1,7 +1,6 @@
-<?php //kegunaannya adalah untuk pembuka dalam bahasa pemograman PHP
+<?php 
 
-use Illuminate\Support\Facades\Route;  //kegunaannya adalah untuk
-
+use Illuminate\Support\Facades\Route;  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,42 +12,45 @@ use Illuminate\Support\Facades\Route;  //kegunaannya adalah untuk
 |
 */
 
-Route::get('/', function () {   //kegunaannya (route) adalah untuk menangani request kita di Url kemudian mengarahkan aplikasi untuk memanggil halaman/									resouce tertentu || kegunaannya (get) adalah untuk menampilkan resource bisa berupa Fungsi atau Controller          
-	return view('welcome');     //kegunaanya adalah untuk memanggil kembali function yang akan dijalankan ketika suatu URL diakses dengan method yang 								sesuai
+Route::get('/', function () {  
+	return view('welcome'); 
 });
 
-Auth::routes(); //kegunaannya adalah untuk class helper yang nge generate semua route untuk authentikasi
+Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home'); //kegunaannya (route) adalah untuk menangani request kita di Url kemudian mengarahkan																	aplikasi untuk memanggil halaman/resouce tertentu ('home') || kegunaannya (get) adalah untuk															 menampilkan resource bisa berupa Fungsi atau Controller('HomeController@index')
-Route::get('/cek_role', 'AuthController@roles');  //kegunaannya (route) adalah untuk menangani request kita di Url kemudian mengarahkan aplikasi untuk m													memanggil halaman/resouce tertentu ('cek_role') || kegunaannya (get) adalah untuk menampilkan															resource bisa berupa Fungsi atau Controller('AuthController@roles')
+Route::get('/home', 'HomeController@index')->name('home'); 
+Route::get('/cek_role', 'AuthController@roles'); 
 
 
-Route::group(['middleware' => ['role:admin']], function () { //kegunaannya adalah untuk
-	Route::get('/admin/dashboard', 'AdminController@index'); //kegunaannya adalah untuk
-	Route::get('admin/daftar-upacara', 'AdminController@DaftarUpacara'); //kegunaannya adalah untuk
-	Route::get('admin/tambah-petugas-upacara', 'AdminController@TambahPetugasUpacara'); //kegunaannya adalah untuk
-	Route::post('admin/tambah-petugas-upacara', 'AdminController@SaveSchedule'); //kegunaannya adalah untuk
+Route::group(['middleware' => ['role:admin']], function () {
+	Route::get('/admin/dashboard', 'AdminController@index'); 
+
+	Route::get('/admin/daftar-upacara', 'AdminController@DaftarUpacara');
+
+	Route::get('/admin/tambah-petugas-upacara', 'AdminController@TambahPetugasUpacara');
+	Route::post('/admin/tambah-petugas-upacara', 'AdminController@SaveSchedule'); 
+	Route::get('/admin/{id}/edit','AdminController@edit');
+
+	Route::get('/admin/tambah-pembina', 'AdminController@TambahPembina'); 
+	Route::post('/admin/tambah-pembina', 'AdminController@SaveTeacher');
+	Route::get('/admin/{id}/edit','AdminController@editPembina');
+ 
 	
-	Route::get('admin/tambah-pembina', 'AdminController@TambahPembina'); //kegunaannya adalah untuk
-	Route::post('admin/tambah-pembina', 'AdminController@SaveTeacher'); //kegunaannya adalah untuk
-	
-	Route::get('admin/tambah-kelas', 'AdminController@TambahKelas'); //kegunaannya adalah untuk
-	Route::post('admin/tambah-kelas', 'AdminController@SaveClass'); //kegunaannya adalah untuk
-	
-	
-
-
-});
-
-Route::group(['middleware' => ['role:guru']], function () { //kegunaannya adalah untuk
-	Route::get('/guru', function (){ return 'ini guru'; }); //kegunaannya adalah untuk
-	Route::get('/guru/daftar-honor', function (){ return 'ini GAJI guru'; }); //kegunaannya adalah untuk
+	Route::get('/admin/tambah-kelas', 'AdminController@TambahKelas');
+	Route::post('/admin/tambah-kelas', 'AdminController@SaveClass'); 
 
 });
 
-Route::group(['middleware' => ['role:siswa']], function () { //kegunaannya adalah untuk
-	Route::get('/siswa', function (){ return 'ini siswa'; }); //kegunaannya adalah untuk
+Route::group(['middleware' => ['role:guru']], function () { 
+
+	Route::get('/guru', function (){ return 'ini guru'; }); 
+	Route::get('/guru/daftar-honor', function (){ return 'ini GAJI guru'; }); 
 
 });
 
-Route::get('/index', 'HomeController@pageblank'); //kegunaannya adalah untuk
+Route::group(['middleware' => ['role:siswa']], function () { 
+	Route::get('/siswa', function (){ return 'ini siswa'; }); 
+
+});
+
+Route::get('/index', 'HomeController@pageblank'); 

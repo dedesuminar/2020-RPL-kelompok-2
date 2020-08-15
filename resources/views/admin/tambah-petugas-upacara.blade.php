@@ -20,6 +20,7 @@
 								<th>Kelas</th>
 								<th>Pembina</th>
 								<th>Aksi</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						@foreach($schedule as $data)
@@ -29,8 +30,9 @@
 							<th>{{date('l, d F Y', strtotime($data->created_schedule))}}</th>
 							<th>{{$data->class_name}}</th>
 							<th>{{$data->teacher_name}}</th>
-							<th>Aksi</th>
-							
+							<th><a href="/admin/{{$data->id}}/edit" type="submit" class="btn btn-danger" >EDIT</a></th>
+							<th><button type="submit" class="btn btn-success">DELETE</button></th>
+
 						</tbody>
 						@endforeach
 					</table>
@@ -68,7 +70,7 @@
                   <div class="col-sm-10">
                     <select class="form-control valid" id="input-6" name="petugas" required="" aria-invalid="false">
                        @foreach($kelas as $data)
-                       		<option value="{{$data->id}}">{{$data->class_name .  '  ||  ' .  $data->majors}}</option>
+                       		<option value="{{$data->id}}">{{$data->class_name .  '  ||  ' .  $data->major}}</option>
                        @endforeach
                     </select>
                   </div>

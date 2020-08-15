@@ -5,7 +5,7 @@
 		<div class="card card-primary">
 			<img src="{{URL::to('assets/images/gallery/MAHPPUT.JFIF')}}" class="card-img-top" alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title text-primary">Card Sample Title</h5>
+				<h5 class="card-title text-primary">JADWAL UPACARA</h5>
 				<p class="card-text">MAHAPUTRA</p>
 				<hr>
 				
@@ -19,7 +19,7 @@
 		<div class="card card-primary">
 			<img src="{{URL::to('assets/images/gallery/MAHPPUT.JFIF')}}" class="card-img-top" alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title text-primary">Card Sample Title</h5>
+				<h5 class="card-title text-primary">JADWAL UPACARA</h5>
 				<p class="card-text">MAHAPUTRA</p>
 				<hr>
 				
@@ -33,7 +33,7 @@
 		<div class="card card-primary">
 			<img src="{{URL::to('assets/images/gallery/MAHPPUT.JFIF')}}" class="card-img-top" alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title text-primary">Card Sample Title</h5>
+				<h5 class="card-title text-primary">JADWAL UPACARA</h5>
 				<p class="card-text">MAHAPUTRA</p>
 				<hr>
 				
@@ -46,7 +46,7 @@
 		<div class="card card-primary">
 			<img src="{{URL::to('assets/images/gallery/MAHPPUT.JFIF')}}" class="card-img-top" alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title text-primary">Card Sample Title</h5>
+				<h5 class="card-title text-primary">JADWAL UPACARA</h5>
 				<p class="card-text">MAHAPUTRA</p>
 				<hr>
 				

@@ -10,4 +10,5 @@ class Kelas extends Model
     protected $fillable=[
 	'class_name', 'major'
     ];
+    protected $primaryKey = 'id_class';
 }

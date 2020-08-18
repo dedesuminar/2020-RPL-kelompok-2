@@ -28,7 +28,7 @@
 
     </div>
     <!-- End container-fluid-->
-    
+@include('sweetalert::alert')    
 <!--End content-wrapper-->
    <!--Start Back To Top Button-->
     <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>

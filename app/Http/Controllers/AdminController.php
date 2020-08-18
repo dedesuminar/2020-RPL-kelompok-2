@@ -16,80 +16,106 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
     
- public function DaftarUpacara()
- {
-     return view ('admin.daftar-upacara');
- }
+    public function DaftarUpacara()
+    {
+       return view ('admin.daftar-upacara');
+   }
 
- public function TambahPetugasUpacara(){
+   public function TambahPetugasUpacara(){
     $data ['kelas'] = kelas::all();
     $data ['guru'] = Teacher::all();
     $data ['no'] = 1;
     $data ['schedule'] = Schedule::join('teachers' , 'teachers.id_teacher' , '=' , 'schedules.id_teacher')
-                                ->join('class' , 'class.id_class' , '=' , 'schedules.id_class')
-                                ->select(
-                                    'schedules.*', 'schedules.created_at as created_schedule',
-                                    'class.class_name',
-                                    'teachers.teacher_name'
-                                )
-                                ->orderBy('created_schedule', 'DESC')
-                                ->get();
+    ->join('class' , 'class.id_class' , '=' , 'schedules.id_class')
+    ->select(
+        'schedules.*', 'schedules.created_at as created_schedule',
+        'class.class_name',
+        'teachers.teacher_name'
+    )
+    ->orderBy('created_schedule', 'DESC')
+    ->get();
 
     return view ('admin.tambah-petugas-upacara', $data);
- }
-
- public function SaveSchedule(Request $request){
-    $create = new Schedule;
-    $create->id_teacher = $request->input('pembina'); 
-    $create->id_class =  $request->input('petugas');
-    $create->save();
- }
-
-public function edit($id)
-    {
-        $data = Schedule::find($id);
-
-        return view('admin.edit-petugas',compact('data'));
     }
 
+    public function SaveSchedule(Request $request){
+        $create = new Schedule;
+        $create->id_teacher = $request->input('pembina'); 
+        $create->id_class =  $request->input('petugas');
+        $create->save();
+        return back()->withSuccess('Berhasil');
+    }
 
- public function TambahPembina()
- {
+    public function UpdateSchedule($id, Request $request)
+    {
+        $update = Schedule::whereId($id)->first();
+        $update->id_teacher = $request->input('id_teacher');
+        $update->id_class = $request->input('id_class');
+        $update->save();
+        return back()->withSuccess('Edit Data Berhasil');
+        
+    }
+
+    public function TambahPembina()
+    {
       $data ['teacher'] = Teacher::all();
       $data ['kelas'] = kelas::all();
       $data ['no'] = 1;
 
 
- return view ('admin.tambah-pembina', $data);
- }
-
- public function SaveTeacher(Request $request){
-    $create = new Teacher;
-    $create->teacher_name = $request->input('teacher_name');
-    $create->save();
-
-}
-public function editPembina($id)
-    {
-        $data = Teacher::find($id);
-        
-        return view('admin.edit-pembina',compact('data'));
+      return view ('admin.tambah-pembina', $data);
     }
 
-public function TambahKelas()
-{
-    $data ['kelas'] = Kelas::all();
-    $data ['kelas'] = kelas::all();
-    $data ['no'] = 1;
+    public function SaveTeacher(Request $request){
+        $create = new Teacher;
+        $create->teacher_name = $request->input('teacher_name');
+        $create->save();
 
-return view ('admin.tambah-kelas',$data);
-}
+    }
 
-public function SaveClass(Request $request){
-    $create = new Kelas;
-    $create->class_name = $request->input('class_name');
-    $create->majors = $request->input('majors');
-    $create->save();
-}
+    public function UpdateTeacher($id, Request $request)
+    {
+        $update = Teacher::whereIdTeacher($id)->first();
+        $update->teacher_name = $request->input('teacher_name');
+        $update->save();
+        return back()->withSuccess('Edit Data Berhasil');
+        
+    }
+
+
+    public function TambahKelas()
+    {
+        $data ['kelas'] = Kelas::all();
+        $data ['no'] = 1;
+
+        return view ('admin.tambah-kelas',$data);
+    }
+
+    public function SaveClass(Request $request){
+        $create = new Kelas;
+        $create->class_name = $request->input('class_name');
+        $create->major = $request->input('major');
+        $create->save();
+    }
+
+    public function UpdateClass($id, Request $request)
+    {
+        $update = Kelas::whereIdClass($id)->first();
+        $update->class_name = $request->input('class_name');
+        $update->major = $request->input('major');
+        $update->save();
+        return back()->withSuccess('Edit Data Berhasil');
+        
+    }
+    public function deleteSchedule(Request $request)
+    {
+        $id = $request->input('id');
+        $delete = Schedule::whereId($id)->delete();
+        if ($delete) {
+            return back()->withSuccess('Data Berhasil Dihapus');
+        } else {
+             return back()->withErrors('Data Gagal Dihapus');   
+        }
+    }
 
 }

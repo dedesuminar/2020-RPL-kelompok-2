@@ -16,10 +16,10 @@
       <i class="icon-home"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul class="sidebar-submenu">
-      <li><a href="{{URL::to('admin/daftar-upacara')}}"><i class="fa fa-circle-o"></i> Daftar Upacara</a></li>
-      <li><a href="{{URL::to('admin/tambah-petugas-upacara')}}"><i class="fa fa-circle-o"></i> Tambah Data Petugas</a></li>
-      <li><a href="{{URL::to('admin/tambah-pembina')}}"><i class="fa fa-circle-o"></i> Tambah Data Pembina</a></li>
-      <li><a href="{{URL::to('admin/tambah-kelas')}}"><i class="fa fa-circle-o"></i> Tambah Data Kelas</a></li>
+      <li><a href="{{URL::to('admin/daftar-upacara')}}"><i class="icon-support"></i> Daftar Upacara</a></li>
+      <li><a href="{{URL::to('admin/tambah-petugas-upacara')}}"><i class="icon-note"></i> Kelola Jadwal Upacara</a></li>
+      <li><a href="{{URL::to('admin/tambah-pembina')}}"><i class="icon-note"></i> Kelola Pembina</a></li>
+      <li><a href="{{URL::to('admin/tambah-kelas')}}"><i class="icon-note"></i> kelola Kelas</a></li>
     </ul>
   </li>
 

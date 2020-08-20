@@ -56,8 +56,8 @@ class AdminController extends Controller
         
     }
 
-    public function TambahPembina()
-    {
+   
+    public function TambahPembina(){
       $data ['teacher'] = Teacher::all();
       $data ['kelas'] = kelas::all();
       $data ['no'] = 1;
@@ -81,7 +81,6 @@ class AdminController extends Controller
         return back()->withSuccess('Edit Data Berhasil');
         
     }
-
 
     public function TambahKelas()
     {
@@ -107,7 +106,8 @@ class AdminController extends Controller
         return back()->withSuccess('Edit Data Berhasil');
         
     }
-    public function deleteSchedule(Request $request)
+
+      public function deleteSchedule(Request $request)
     {
         $id = $request->input('id');
         $delete = Schedule::whereId($id)->delete();
@@ -115,7 +115,31 @@ class AdminController extends Controller
             return back()->withSuccess('Data Berhasil Dihapus');
         } else {
              return back()->withErrors('Data Gagal Dihapus');   
-        }
+   }
+}
+    
+         public function deleteTeacher(Request $request)
+    {
+        $id = $request->input('id_teacher');
+        $delete = Teacher::whereIdTeacher($id)->delete();
+        if($delete){
+            return back()->withSuccess('Data Berhasil dihapus');
+        } else {
+        return back()->withErrors('Data Gagal Dihapus');
+    } 
+        
     }
+
+     public function deleteClass(Request $request)
+    {
+        $id = $request->input('id_class');
+        $delete = Kelas::whereIdClass($id)->delete();
+        if($delete){
+            return back()->withSuccess('Data Berhasil dihapus');
+        } else {
+        return back()->withErrors('Data Gagal Dihapus');
+    } 
+   
+ }
 
 }

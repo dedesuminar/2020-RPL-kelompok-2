@@ -35,13 +35,13 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/tambah-pembina', 'AdminController@TambahPembina'); 
 	Route::post('/admin/tambah-pembina', 'AdminController@SaveTeacher');
 	Route::post('/admin/update/teacher/{id}', 'AdminController@updateTeacher');
-	//Route::post('/admin/delete/schedule/{id}', 'AdminController@deleteSchedule');
+	Route::post('/admin/delete/teacher', 'AdminController@deleteTeacher');
 	 
 	
 	Route::get('/admin/tambah-kelas', 'AdminController@TambahKelas');
 	Route::post('/admin/tambah-kelas', 'AdminController@SaveClass');
 	Route::post('/admin/update/class/{id}', 'AdminController@updateClass');
-	//Route::post('/admin/delete/schedule/{id}', 'AdminController@Schedule');
+	Route::post('/admin/delete/class', 'AdminController@deleteClass');
 
 });
 

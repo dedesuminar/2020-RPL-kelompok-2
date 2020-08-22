@@ -13,7 +13,16 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $schedule = Schedule::join('teachers' , 'teachers.id_teacher' , '=' , 'schedules.id_teacher')
+        ->join('class' , 'class.id_class' , '=' , 'schedules.id_class')
+        ->select(
+            'schedules.*', 'schedules.created_at as created_schedule',
+            'class.class_name',
+            'teachers.teacher_name'
+        )
+        ->orderBy('created_schedule', 'DESC')
+        ->get();
+        return view('admin.dashboard', compact('schedule'));
     }
     
     public function DaftarUpacara()

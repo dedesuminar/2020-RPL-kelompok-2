@@ -4,13 +4,13 @@
   <!--Start sidebar-wrapper-->
   <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
    <div class="brand-logo">
-    <a href="index.html">
-     <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+    <a>
+     <img sec="{{URL::to('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
      <h5 class="logo-text">SMK MAHAPUTRA</h5>
    </a>
  </div>
  <ul class="sidebar-menu do-nicescrol">
-  <li class="sidebar-header">MAIN NAVIGATION</li>
+  <li class="sidebar-header">PENJADWALAN UPACARA</li>
   <li>
     <a href="index.html" class="waves-effect">
       <i class="icon-home"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
@@ -29,10 +29,6 @@
           @csrf
       </form>
 </li>
-
-
-    
-  
 </ul>
 </ul>
 </div>

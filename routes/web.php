@@ -25,7 +25,7 @@ Route::get('/cek_role', 'AuthController@roles');
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/dashboard', 'AdminController@index'); 
 
-	Route::get('/admin/daftar-upacara', 'AdminController@DaftarUpacara');
+	Route::get('/admin/daftar-upacara', 'AdminController@index');
 
 	Route::get('/admin/tambah-petugas-upacara', 'AdminController@TambahPetugasUpacara');
 	Route::post('/admin/tambah-petugas-upacara', 'AdminController@SaveSchedule'); 

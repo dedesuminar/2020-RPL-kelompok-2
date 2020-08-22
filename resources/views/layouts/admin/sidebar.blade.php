@@ -6,7 +6,7 @@
    <div class="brand-logo">
     <a href="index.html">
      <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-     <h5 class="logo-text">RockerAdmin</h5>
+     <h5 class="logo-text">SMK MAHAPUTRA</h5>
    </a>
  </div>
  <ul class="sidebar-menu do-nicescrol">
@@ -21,11 +21,19 @@
       <li><a href="{{URL::to('admin/tambah-pembina')}}"><i class="icon-note"></i> Kelola Pembina</a></li>
       <li><a href="{{URL::to('admin/tambah-kelas')}}"><i class="icon-note"></i> kelola Kelas</a></li>
     </ul>
-  </li>
+
+<li>
+  <a href="{{ route('logout') }}" onclick="event.preventDefault();
+      document.getElementById('logout-form').submit();"><i class="icon-logout icons"></i>Logout</a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+      </form>
+</li>
 
 
-
-
-
+    
+  
+</ul>
+</ul>
 </div>
-   <!--End sidebar-wrapper-->
+</div>

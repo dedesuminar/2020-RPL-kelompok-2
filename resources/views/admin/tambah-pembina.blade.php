@@ -49,12 +49,7 @@
 											<div class="form-group row">
 												<label for="input-6" class="col-sm-2 col-form-label" >Pembina</label>
 												<div class="col-sm-10">
-													<select class="form-control valid" id="input-6" name="id_teacher" required="" aria-invalid="false">
-														<option selected="false">Pilih Nama Guru</option>
-														@foreach($teacher as $data)
-														<option value="{{$data->id_teacher}}">{{$data->teacher_name}}</option>
-														@endforeach
-													</select>
+														<input class="col-sm-10" type="text" name="teacher_name" value="{{$data->teacher_name}}">
 												</div>
 											</div>	
 

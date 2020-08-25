@@ -29,11 +29,11 @@
 							<th>{{$data->class_name}}</th>
 							<th>{{$data->major}}</th> 
 							<th class="text-center">
-								<form method="post" action="{{URL::to('admin/delete/class')}}">
+								<form method="post" action="{{URL::to('admin/delete')}}">
 									@csrf
 									<button type="button" class="btn btn-primary m-1 btn-sm" data-toggle="modal" data-target="#edit{{$data->id_class}}">Edit</button>
 									<input type="hidden" value="{{$data->id_class}}" name="id_class">
-									<input type="submit" class="btn btn-danger btn-sm btn-rounded" value="Delete">
+									<input type="submit" class="btn btn-danger btn-sm btn-rounded" value="Delete" >
 							</form>
 						</tbody>
 						<div class="modal fade" id="edit{{$data->id_class}}">
@@ -52,23 +52,13 @@
 											<div class="form-group row">
 												<label for="input-6" class="col-sm-2 col-form-label" >kelas</label>
 												<div class="col-sm-10">
-													<select class="form-control valid" id="input-6" name="id_class" required="" aria-invalid="false">
-														<option selected="false">Pilih kelas</option>
-														@foreach($kelas as $data)
-														<option value="{{$data->id_class}}">{{$data->class_name}}</option>
-														@endforeach
-													</select>
+														<input class="col-sm-10" type="text" name="class_name" value="{{$data->class_name}}">
 												</div>
 											</div>
 											<div class="form-group row">
 												<label for="input-6" class="col-sm-2 col-form-label" >Jurusan</label>
-												<div class="col-sm-10">
-													<select class="form-control valid" id="input-6" name="major" required="" aria-invalid="false">
-														<option selected="false">Pilih Jurusan</option>
-														@foreach($kelas as $data)
-														<option value="{{$data->id_class}}">{{$data->major}}</option>
-														@endforeach
-													</select>
+												<div class="col-sm-10">		
+												<input class="col-sm-10" type="text" name="major" value="{{$data->major}}">
 												</div>
 											</div>	
 												

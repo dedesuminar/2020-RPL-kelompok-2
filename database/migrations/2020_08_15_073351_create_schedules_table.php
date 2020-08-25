@@ -18,6 +18,8 @@ class CreateSchedulesTable extends Migration
             $table->foreignId('id_teacher');
             $table->foreignId('id_class');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

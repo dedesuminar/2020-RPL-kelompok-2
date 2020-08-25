@@ -1,3 +1,12 @@
+<style>
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px; 
+  }
+</style>
+
+
 <!-- Start wrapper-->
 <div id="wrapper">
 
@@ -5,8 +14,8 @@
   <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
    <div class="brand-logo">
     <a>
-     <img sec="{{URL::to('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
-     <h5 class="logo-text">SMK MAHAPUTRA</h5>
+     <img src="{{URL::to('assets/images/logo-mahput.JFIF')}}" class="logo-icon" alt="logo icon">
+     <h5 class="logo-text">SmkMahaputra</h5>
    </a>
  </div>
  <ul class="sidebar-menu do-nicescrol">

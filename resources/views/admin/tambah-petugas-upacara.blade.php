@@ -27,7 +27,7 @@
 						<tbody>
 							
 							<th>{{$data->id_teacher}}</th>
-							<th>{{date('l, d F Y', strtotime($data->created_schedule))}}</th>
+							<th>{{date('l, d F Y || H:i', strtotime($data->created_schedule))}}</th>
 							<th>{{$data->class_name}}</th>
 							<th>{{$data->teacher_name}}</th>
 							<th class="text-center">
@@ -129,7 +129,7 @@
 					<div class="form-group row">
 						<label for="input-8" class="col-sm-2 col-form-label">Tanggal</label>
 						<div class="col-sm-10">
-							<input type="date" class="form-control" id="input-8" name="file" required="">
+							<input type="datetime-local" class="form-control" id="input-8" name="date" required="">
 						</div>
 					</div>
 				</div>

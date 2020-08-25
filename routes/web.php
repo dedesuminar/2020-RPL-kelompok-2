@@ -22,7 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/cek_role', 'AuthController@roles'); 
 
 
-Route::group(['middleware' => ['role:admin']], function () {
+Route::group(['middleware' => 'DisablePreverentBack'], function () {
+
+	Auth::routes();
 	Route::get('/admin/dashboard', 'AdminController@index'); 
 
 	Route::get('/admin/daftar-upacara', 'AdminController@index');
@@ -41,7 +43,7 @@ Route::group(['middleware' => ['role:admin']], function () {
 	Route::get('/admin/tambah-kelas', 'AdminController@TambahKelas');
 	Route::post('/admin/tambah-kelas', 'AdminController@SaveClass');
 	Route::post('/admin/update/class/{id}', 'AdminController@updateClass');
-	Route::post('/admin/delete/class', 'AdminController@deleteClass');
+	Route::post('/admin/delete', 'AdminController@deleteClass');
 
 });
 

@@ -17,6 +17,8 @@ class CreateTeachersTable extends Migration
             $table->bigIncrements('id_teacher');
             $table->string('teacher_name');
             $table->timestamps();
+            $table->softDeletes();
+
 
         });
     }

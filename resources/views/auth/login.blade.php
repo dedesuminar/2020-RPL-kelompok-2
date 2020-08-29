@@ -63,17 +63,6 @@
                               </div>
                            </div>
                           </div>
-                          <div class="form-row mr-0 ml-0">
-                          <div class="form-group col-6">
-                              <div class="icheck-primary">
-                               <input type="checkbox" id="user-checkbox" checked="" />
-                               <label for="user-checkbox">Remember me</label>
-                             </div>
-                            </div>
-                            <div class="form-group col-6 text-right">
-                             <a href="authentication-reset-password2.html">Reset Password</a>
-                            </div>
-                        </div>
                         <button type="submit" class="btn btn-outline-primary btn-block waves-effect waves-light">Sign In</button>
                          
                     </form>

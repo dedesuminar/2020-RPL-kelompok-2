@@ -21,11 +21,11 @@
 								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
-						@foreach($kelas as $data)
+						@foreach($kelas as $no => $data)
 						<tbody>
 							
 							
-							<th>{{$data->id_class}}</th>
+							<th>{{$no+1}}</th>
 							<th>{{$data->class_name}}</th>
 							<th>{{$data->major}}</th> 
 							<th class="text-center">
@@ -33,7 +33,7 @@
 									@csrf
 									<button type="button" class="btn btn-primary m-1 btn-sm" data-toggle="modal" data-target="#edit{{$data->id_class}}">Edit</button>
 									<input type="hidden" value="{{$data->id_class}}" name="id_class">
-									<input type="submit" class="btn btn-danger btn-sm btn-rounded" value="Delete" >
+									<input type="submit" class="btn btn-success btn-sm btn-rounded" value="Delete" >
 							</form>
 						</tbody>
 						<div class="modal fade" id="edit{{$data->id_class}}">

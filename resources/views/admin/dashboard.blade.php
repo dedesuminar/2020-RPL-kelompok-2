@@ -9,7 +9,6 @@
 				<h5 class="card-title text-primary">{{$data->class_name}}</h5>
 				<p class="card-text">{{$data->teacher_name}}</p>
 				<hr>
-				
 			</div>
 		</div>	
 	</div>

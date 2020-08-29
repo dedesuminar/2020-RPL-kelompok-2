@@ -14,8 +14,9 @@ class ScheduleTableSeeder extends Seeder
          DB::table('schedules')->insert([
         	'id'         =>'1',
         	'id_teacher' =>'2',
-        	'id_class'   =>'3',
+        	'id_class'   =>'1',
 
         ]);
     }
 }
+

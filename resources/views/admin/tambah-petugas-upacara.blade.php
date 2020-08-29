@@ -23,10 +23,10 @@
 								
 							</tr>
 						</thead>
-						@foreach($schedule as $data)
+						@foreach($schedule as $no => $data)
 						<tbody>
 							
-							<th>{{$data->id_teacher}}</th>
+							<th>{{$no+1}}</th>
 							<th>{{date('l, d F Y || H:i', strtotime($data->created_schedule))}}</th>
 							<th>{{$data->class_name}}</th>
 							<th>{{$data->teacher_name}}</th>

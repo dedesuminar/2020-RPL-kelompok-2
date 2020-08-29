@@ -20,17 +20,17 @@
 								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
-						@foreach($teacher as $data)
+						@foreach($teacher as $no => $data)
 						<tbody>
 							
-							<th>{{$data->id_teacher}}</th>
+							<th>{{$no+1}}</th>
 							<th>{{$data->teacher_name}}</th>
 							<th class="text-center">
 								<form method="post" action="{{URL::to('admin/delete/teacher')}}">
 									@csrf
-									<button type="button" class="btn btn-primary m-1 btn-sm" data-toggle="modal" data-target="#edit{{$data->id_teacher}}">Edit</button>
+									<button type="button" class="btn btn-info m-1 btn-sm" data-toggle="modal" data-target="#edit{{$data->id_teacher}}">Edit</button>
 									<input type="hidden" value="{{$data->id_teacher}}" name="id_teacher">
-									<input type="submit" class="btn btn-danger btn-sm btn-rounded" value="Delete">
+									<input type="submit" class="btn btn-warning btn-sm btn-rounded" value="Delete">
 						    </form>	
 						</tbody>
 

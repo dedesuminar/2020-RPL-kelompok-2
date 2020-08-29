@@ -28,7 +28,9 @@
 
     </div>
     <!-- End container-fluid-->
-@include('sweetalert::alert')    
+@include('sweetalert::alert')
+
+    
 
    
   </div><!--End wrapper-->

@@ -40,7 +40,7 @@
                 <div class="card-body">
                     <div class="card-content p-3">
                         <div class="text-center">
-                            <img src="assets/images/logo-icon.png">
+                            <img src="{{URL::to('assets/images/gallery/MAHPPUT.JFIF')}}" style="width: 100px">
                         </div>
                      <div class="card-title text-uppercase text-center py-3">Sign In</div>
                        <form method="post" action="{{ route('login') }}">

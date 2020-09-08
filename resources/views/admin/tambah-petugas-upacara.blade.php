@@ -39,7 +39,6 @@
 
 								</form>
 							
-
 						</tbody>
 						<div class="modal fade" id="edit{{$data->id}}">
 							<div class="modal-dialog modal-lg">
@@ -57,18 +56,20 @@
 												<label for="input-6" class="col-sm-2 col-form-label">Pembina</label>
 												<div class="col-sm-10">
 													<select class="form-control valid" id="input-6" name="id_teacher" required="" aria-invalid="false">
-														<option selected="false">Pilih Nama Guru</option>
-														@foreach($guru as $data)
-														<option value="{{$data->id_teacher}}">{{$data->teacher_name}}</option>
+
+														<option value="{{$data->teacher_id}}">Guru Sebelumnya : {{$data->teacher_name}}</option>
+														@foreach($guru as $item)
+														<option value="{{$item->id_teacher}}">{{$item->teacher_name}}</option>
 														@endforeach
 													</select>
 												</div>
 											</div>
 
 											<div class="form-group row">
-												<label for="input-6" class="col-sm-2 col-form-label">Petugas</label>
+												<label for="input-6" class="col-sm-2 col-form-label">Kelas</label>
 												<div class="col-sm-10">
 													<select class="form-control valid" id="input-6" name="id_class" required="" aria-invalid="false">
+														<option value="{{$data->class_id}}">Kelas Sebelumnya : {{$data->class_name}}</option>
 														@foreach($kelas as $data)
 														<option value="{{$data->id_class}}">{{$data->class_name .  '  ||  ' .  $data->major}}</option>
 														@endforeach

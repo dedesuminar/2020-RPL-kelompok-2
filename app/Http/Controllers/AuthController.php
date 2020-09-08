@@ -13,11 +13,8 @@ class AuthController extends Controller
         $a = $user->roles[0]->id;
         if ($a == '1') {
             return redirect('/admin/dashboard');
-
-        }elseif ($a =='4') {
+        }elseif ($a =='2') {
             return redirect('/guru/dashboard');
-        }elseif ($a == '5') {
-            return redirect('/siswa/dashboard');
         }else{
             return redirect('/dashboard');
         }

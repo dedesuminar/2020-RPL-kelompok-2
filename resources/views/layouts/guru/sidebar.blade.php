@@ -1,0 +1,28 @@
+<!-- Start wrapper-->
+<div id="wrapper">
+
+  <!--Start sidebar-wrapper-->
+  <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+   <div class="brand-logo">
+    <a>
+     <img src="{{URL::to('assets/images/mp1.png')}}" class="logo-icon" alt="logo icon">
+     <h5 class="logo-text">SmkMahaputra</h5>
+   </a>
+ </div>
+ <ul class="sidebar-menu do-nicescrol">
+  <li class="sidebar-header">PENJADWALAN UPACARA</li>
+  <li>
+    <a href="" class="waves-effect">
+      <a href="{{URL::to('guru/daftar-upacara')}}"><i class="icon-layers"></i> Daftar Upacara</a>
+
+<li>
+  <a href="{{ route('logout') }}" onclick="event.preventDefault();
+      document.getElementById('logout-form').submit();"><i class="icon-logout icons"></i>Logout</a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+      </form>
+</li>
+</ul>
+</ul>
+</div>
+</div>

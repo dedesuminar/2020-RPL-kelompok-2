@@ -29,7 +29,7 @@
 							<th>{{$data->class_name}}</th>
 							<th>{{$data->major}}</th> 
 							<th class="text-center">
-								<form method="post" action="{{URL::to('admin/delete')}}">
+								<form method="post" action="{{URL::to('admin/delete/class')}}">
 									@csrf
 									<button type="button" class="btn btn-primary m-1 btn-sm" data-toggle="modal" data-target="#edit{{$data->id_class}}">Edit</button>
 									<input type="hidden" value="{{$data->id_class}}" name="id_class">

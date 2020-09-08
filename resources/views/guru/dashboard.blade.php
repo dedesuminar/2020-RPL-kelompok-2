@@ -1,4 +1,4 @@
-@extends('layouts.admin-master')
+@extends('layouts.guru-master')
 @section ('content')
 <center><h4>PENJADWALAN UPACARA SMKS MAHAPUTRA</h4></center>
 

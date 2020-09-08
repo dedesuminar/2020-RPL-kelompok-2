@@ -37,7 +37,7 @@ class AdminController extends Controller
      return view ('admin.daftar-upacara');
  }
 
- public function TambahPetugasUpacara(){
+ public function TambahSchedule(){
     $data ['kelas'] = kelas::all();
     $data ['guru'] = Teacher::all();
     $data ['no'] = 1;
@@ -46,7 +46,9 @@ class AdminController extends Controller
     ->select(
         'schedules.*', 'schedules.created_at as created_schedule',
         'class.class_name',
-        'teachers.teacher_name'
+        'teachers.teacher_name',
+        'class.id_class as class_id',
+        'teachers.id_teacher as teacher_id'
     )
     ->orderBy('created_schedule', 'DESC')
     ->get();

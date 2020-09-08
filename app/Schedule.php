@@ -10,6 +10,7 @@ class Schedule extends Model
     use SoftDeletes;
 
     	protected $table = 'schedules';
-    	 protected $dates = ['deleted_at'];
+    	protected $dates = ['deleted_at'];
+    	protected $guarded = [];
 
 }
